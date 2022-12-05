@@ -25,7 +25,6 @@ int main(){
   int sum=0;
   int max[L]={0};
 
-  char vide[]="\n";
 
   for(int i=0;i<nelves;i++){
     if(lignes[i][0]=='\n'){
