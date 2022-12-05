@@ -10,10 +10,7 @@ int main(){
     p1 += ((a1<=b1 && b2<=a2) // B C A
         ||(b1<=a1 && a2<=b2));// A C B
 
-    p2 += ((a1<=b1 && b1<=a2) // b1 E A
-        ||(a1<=b2 && b2<=a2)// b2 E A
-        ||(b1<=a1 && a1<=b2)// a1 E B
-        ||(b1<=a2 && a2<=b2));// a2 E B
+    p2 += (!(a2<b1 || a1>b2));
   }
   printf("Partie 1 : %d  Partie 2 : %d\n",p1,p2);
 }
