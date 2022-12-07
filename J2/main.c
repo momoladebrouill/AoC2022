@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define LEN 25000
+#define LEN 2500
 
 
 int amIwinning (char adv, char me)
