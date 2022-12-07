@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define LEN 4095
-#define N 4
+#define N 14
 
 int main()
 {
