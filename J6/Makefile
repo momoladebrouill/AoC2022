@@ -1,2 +1,3 @@
 all:
-	gcc main.c -o main && ./main < input
+	gcc main.c -o main
+	./main

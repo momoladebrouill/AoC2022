@@ -1,25 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define LEN 4095
 
-int main(){
+#define LEN 4095
+#define N 14
+
+int main()
+{
   char file[LEN];
-  FILE *fp = fopen("test","r");
+  FILE *fp = fopen("input", "r");
   char c = 0;
   int count = 0;
-  int t [26]= {0};
-  int i=0;
-  while ((c = fgetc(fp)) != EOF){
+  int t[26] = {0};
+  int i = 0;
+
+  while ( (c = fgetc(fp)) != EOF && count != N){
     file[i] = c;
-    t[c - 'a']++;
-    if (t[c - 'a'] == 1) count++;
-    t[file[i-4] - 'a']--;
-    if (i > 3 && (t[file[i - 4] - 'a'] != 1)) count--;
-    printf("%d", count);
-    if (count==4){
-      printf("Fin : %d", i);
+
+    int *a = t + c - 'a';
+    (*a)++;
+
+    if ((*a) == 1) count++;
+    if ((*a) == 2) count--;
+
+    if (i > N - 1){
+      int *b = t + file[i - N] - 'a';
+      (*b)--;
+      if ((*b) == 0) count--;
+      if ((*b) == 1) count++;
     }
     i++;
   }
+  printf("Fin : %d\n",i+1);
 
 }
