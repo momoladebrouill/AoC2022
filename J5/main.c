@@ -5,11 +5,11 @@
 #define BUF_SIZE 50
 
 typedef struct node{
-  struct node  * prec;
+  struct node* prec;
   char val;
 } node;
 
-node* push(node* s,char v){
+node* push(node* s, char v){
   node* new;
   new->prec = s;
   new->val = v;
@@ -45,10 +45,21 @@ int main(){
     printf("\n");
   }
 
-  node* stack[9];
-  for(int i = 0; i < 9; i++){
-    for(int j = 8; j >= 0; j--){
-      stack[i] = push(stack[i], array[j][i]);
+  node* stack[9] = {NULL};
+  for(int i = 9; i >= 0; i--){
+    for(int j = 0; j < 8; j++){
+      printf("%d, %d\n", j, i);
+      stack[j] = push(stack[j], array[j][i]);
+      printf("done");
     }
   }
+  /*for(int i = 0; i < 9; i++){
+    int j = 0;
+    node* c = stack[i];
+    while(c){ 
+      c = c->prec;
+      j++;
+    }
+    printf("%d", j);
+  }*/
 }
