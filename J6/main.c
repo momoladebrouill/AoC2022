@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define LEN 4095
 #define N 14
 
 int main()
 {
-  char file[LEN];
+  char file[N + 1];
   FILE *fp = fopen("input", "r");
   char c = 0;
   int count = 0;
@@ -14,7 +13,7 @@ int main()
   int i = 0;
 
   while ( (c = fgetc(fp)) != EOF && count != N){
-    file[i] = c;
+    file[i%(N+1)] = c;
 
     int *a = t + c - 'a';
     (*a)++;
@@ -23,13 +22,13 @@ int main()
     if ((*a) == 2) count--;
 
     if (i > N - 1){
-      int *b = t + file[i - N] - 'a';
+      int *b = t + file[(i + 1)%(N + 1)] - 'a';
       (*b)--;
       if ((*b) == 0) count--;
       if ((*b) == 1) count++;
     }
     i++;
   }
-  printf("Fin : %d\n",i+1);
+  printf("Fin : %d\n",i);
 
 }

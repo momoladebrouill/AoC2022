@@ -44,7 +44,7 @@ int adddir(dir *d, dir* n){
   n->par = d;
 }
 
-int weight(dir* d){
+int weight(dir* d, int* q1){
   int s = 0;
   file* f = d->fchild;
   //pour les fichiers
@@ -55,9 +55,10 @@ int weight(dir* d){
   dir* e = d->fdir;
   //pour les fichiers
   while(e){
-    s+=weight(e);
+    s+=weight(e, q1);
     e=e->next;
   }
+  if (s<100000) (*q1) += s;
   return s;
 }
 
@@ -119,7 +120,8 @@ int main(){
     }
   }
   printdir(home,0);
-  printf("%i\n",weight(home));
-
+  int q1 = 0;
+  printf("%i\n",weight(home, &q1));
+  printf("%d\n", q1);
 }
 
