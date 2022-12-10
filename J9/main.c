@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 #define NOM "test"
 #define NBLINES 5
 #define BUF_SIZE 7
@@ -12,7 +13,7 @@ int main(){
   while (1) {
     char ligne[BUF_SIZE];
     if (fgets(ligne, BUF_SIZE, fp) == NULL) break; // no more line
-    for (int i = 0; i <BUF_SIZE; i++){ if (ligne[i] == '\n')ligne[i] = 0;} 
+    for(int i = 0; i <BUF_SIZE; i++){ if (ligne[i] == '\n')ligne[i] = 0;} 
     printf("%s\n",ligne);
     strcpy(tabl+len*BUF_SIZE,ligne);
     len++;
