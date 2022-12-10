@@ -1,6 +1,6 @@
 make:
 	gcc main.c -o main
-	./main < input
+	./main
 
 no:
 	gcc main.c -o main -fsanitize=undefined
