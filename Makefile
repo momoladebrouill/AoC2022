@@ -1,5 +1,9 @@
 make:
-	gcc main.c -o main
+	gcc main.c -o main -fsanitize=address
+	./main 
+
+py:
+	python3 main.py
 
 scanf:
 	gcc main.c -o main -fsanitize=address
