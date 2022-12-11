@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define LINES 2000
+#define LINES 5
 
 int main(){
   char dir;
@@ -7,12 +7,8 @@ int main(){
 
   int poses[10][2] = {500};
   for(int i=0; i<LINES; i++){
-    scanf("%c %d\n",&a1,&a2);
+    scanf("%c %d\n",&dir,&times);
 
-    p1 += ((a1<=b1 && b2<=a2) // B C A
-        ||(b1<=a1 && a2<=b2));// A C B
-
-    p2 += (!(a2<b1 || a1>b2));
+    printf("%c  %d\n",dir, times);
   }
-  printf("Partie 1 : %d  Partie 2 : %d\n",p1,p2);
 }
