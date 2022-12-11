@@ -7,3 +7,7 @@ scanf:
 
 clean:
 	rm main
+
+sex:
+	@echo "no you can't"
+
