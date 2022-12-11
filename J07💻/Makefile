@@ -1,7 +1,9 @@
 make:
 	gcc main.c -o main
+
+scanf:
+	gcc main.c -o main -fsanitize=undefined
 	./main < input
 
-no:
-	gcc main.c -o main -fsanitize=undefined
-	./main
+clean:
+	rm main
