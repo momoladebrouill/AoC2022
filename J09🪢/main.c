@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define LINES 5
+#define LINES 10
 
 int main(){
   char dir;
