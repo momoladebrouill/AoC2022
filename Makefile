@@ -8,6 +8,14 @@ scanf:
 clean:
 	rm main
 
+AJD = $(shell date +"J%d")
+
+hello:
+	@cp template $(AJD) -r 
+	@cd $(AJD);
+	@firefox adventofcode.com
+	@echo "Hello bgx"
+
 sex:
 	@echo "no you can't"
 
