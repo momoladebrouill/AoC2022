@@ -2,7 +2,7 @@ make:
 	gcc main.c -o main
 
 scanf:
-	gcc main.c -o main -fsanitize=undefined
+	gcc main.c -o main -fsanitize=address
 	./main < input
 
 clean:
