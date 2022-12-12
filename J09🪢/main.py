@@ -1,6 +1,6 @@
 from pprint import pprint
 
-f = open("input", "r").read()
+f = open("test", "r").read()
 f = f.split("\n")[:-1]
 moves = []
 dico = {"R": (1, 0), "L": (-1, 0), "U": (0, 1), "D": (0, -1), "N": (0, 0)}
